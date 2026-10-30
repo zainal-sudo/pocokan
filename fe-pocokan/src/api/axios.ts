@@ -3,7 +3,7 @@ import axios from "axios";
 let isExpiredHandled = false; // cegah double dispatch
 
 const api = axios.create({
-  baseURL: "http://localhost:3299/api",
+  baseURL: import.meta.env.VITE_API_URL || "/api",
   timeout: 30000,
   headers: { "Content-Type": "application/json" },
 });
